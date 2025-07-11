@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  reactStrictMode: true,
+  experimental: {
+    appDir: true, // ✅ Important for app/ directory routing
+  },
+}
 
-export default nextConfig;
+export default nextConfig
