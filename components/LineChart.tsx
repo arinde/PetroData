@@ -47,7 +47,7 @@ export default function LineChart({
       return acc
     }, {})
 
-    let chartData = Object.entries(grouped)
+    const chartData = Object.entries(grouped)
       .map(([date, values]) => ({
         date,
         value: Number(
