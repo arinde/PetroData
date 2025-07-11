@@ -74,7 +74,7 @@ export default function ProductCardBlock() {
                     {product.fakeValue > 0.37 ? "-" : "+"}
                     {product.fakeValue}
                   </p>
-                  <p className={`text-xs ${product.color} border px-1 py-0.5 rounded-3xl`}>
+                  <p className={`text-xs ${product.color} border-0 px-1 py-0.5 rounded-3xl`}>
                     {product.fakeValue > 0.37 ? "-" : "+"}
                     {product.fakeChange}%
 

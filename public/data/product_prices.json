@@ -1,0 +1,36 @@
+[
+  { "Period": "2025-07-01", "Region": "North", "State": "Kano", "PMS": 600.50, "AGO": 850.20, "DPK": 500.10, "LPG": 450.30 },
+  { "Period": "2025-07-01", "Region": "South", "State": "Rivers", "PMS": 610.20, "AGO": 860.00, "DPK": 510.50, "LPG": 460.00 },
+  { "Period": "2025-07-01", "Region": "West", "State": "Lagos", "PMS": 605.00, "AGO": 855.30, "DPK": 505.20, "LPG": 455.10 },
+  { "Period": "2025-07-01", "Region": "East", "State": "Enugu", "PMS": 615.80, "AGO": 865.10, "DPK": 515.00, "LPG": 465.20 },
+
+  { "Period": "2025-07-02", "Region": "North", "State": "Kano", "PMS": 601.20, "AGO": 851.00, "DPK": 500.80, "LPG": 451.00 },
+  { "Period": "2025-07-02", "Region": "South", "State": "Rivers", "PMS": 611.00, "AGO": 860.80, "DPK": 511.20, "LPG": 460.80 },
+  { "Period": "2025-07-02", "Region": "West", "State": "Lagos", "PMS": 605.80, "AGO": 856.10, "DPK": 506.00, "LPG": 455.90 },
+  { "Period": "2025-07-02", "Region": "East", "State": "Enugu", "PMS": 616.50, "AGO": 865.90, "DPK": 515.80, "LPG": 466.00 },
+  
+  { "Period": "2025-07-03", "Region": "North", "State": "Kano", "PMS": 602.00, "AGO": 852.00, "DPK": 501.50, "LPG": 451.80 },
+  { "Period": "2025-07-03", "Region": "South", "State": "Rivers", "PMS": 612.00, "AGO": 861.80, "DPK": 512.00, "LPG": 461.60 },
+  { "Period": "2025-07-03", "Region": "West", "State": "Lagos", "PMS": 606.50, "AGO": 856.80, "DPK": 506.70, "LPG": 456.60 },
+  { "Period": "2025-07-03", "Region": "East", "State": "Enugu", "PMS": 617.20, "AGO": 866.60, "DPK": 516.50, "LPG": 466.70 },
+
+  { "Period": "2025-07-04", "Region": "North", "State": "Kano", "PMS": 602.80, "AGO": 852.80, "DPK": 502.20, "LPG": 452.50 },
+  { "Period": "2025-07-04", "Region": "South", "State": "Rivers", "PMS": 612.80, "AGO": 862.60, "DPK": 512.80, "LPG": 462.40 },
+  { "Period": "2025-07-04", "Region": "West", "State": "Lagos", "PMS": 607.30, "AGO": 857.50, "DPK": 507.40, "LPG": 457.30 },
+  { "Period": "2025-07-04", "Region": "East", "State": "Enugu", "PMS": 618.00, "AGO": 867.40, "DPK": 517.30, "LPG": 467.50 },
+
+  { "Period": "2025-07-05", "Region": "North", "State": "Kano", "PMS": 603.50, "AGO": 853.50, "DPK": 502.90, "LPG": 453.20 },
+  { "Period": "2025-07-05", "Region": "South", "State": "Rivers", "PMS": 613.50, "AGO": 863.30, "DPK": 513.50, "LPG": 463.10 },
+  { "Period": "2025-07-05", "Region": "West", "State": "Lagos", "PMS": 608.00, "AGO": 858.20, "DPK": 508.10, "LPG": 458.00 },
+  { "Period": "2025-07-05", "Region": "East", "State": "Enugu", "PMS": 618.70, "AGO": 868.10, "DPK": 518.00, "LPG": 468.20 },
+  
+  { "Period": "2025-07-06", "Region": "North", "State": "Kano", "PMS": 604.20, "AGO": 854.20, "DPK": 503.60, "LPG": 453.90 },
+  { "Period": "2025-07-06", "Region": "South", "State": "Rivers", "PMS": 614.20, "AGO": 864.00, "DPK": 514.20, "LPG": 463.80 },
+  { "Period": "2025-07-06", "Region": "West", "State": "Lagos", "PMS": 608.80, "AGO": 858.90, "DPK": 508.80, "LPG": 458.70 },
+  { "Period": "2025-07-06", "Region": "East", "State": "Enugu", "PMS": 619.40, "AGO": 868.80, "DPK": 518.70, "LPG": 468.90 },
+
+  { "Period": "2025-07-07", "Region": "North", "State": "Kano", "PMS": 605.00, "AGO": 855.00, "DPK": 504.30, "LPG": 454.60 },
+  { "Period": "2025-07-07", "Region": "South", "State": "Rivers", "PMS": 615.00, "AGO": 864.80, "DPK": 515.00, "LPG": 464.60 },
+  { "Period": "2025-07-07", "Region": "West", "State": "Lagos", "PMS": 609.50, "AGO": 859.60, "DPK": 509.50, "LPG": 459.40 },
+  { "Period": "2025-07-07", "Region": "East", "State": "Enugu", "PMS": 620.10, "AGO": 869.50, "DPK": 519.40, "LPG": 469.60 }
+]
