@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
 
 const navItems = [
   { name: "Dashboard", path: "/dashboard" },
@@ -18,7 +19,7 @@ export default function Sidebar() {
   return (
     <aside className="hidden lg:block w-[250px] h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-6 border-r border-gray-200 dark:border-gray-700">
       {/* Logo */}
-      <h1 className="text-2xl font-bold mb-10 tracking-wide">PetroData</h1>
+      <h1 className="text-2xl font-bold mb-10 tracking-wide flex items-center"><Image src="/images/Logo.png" alt="PetroData" width={32} height={32} /><span className="text-teal-500">Petro</span>Data</h1>
 
       {/* Navigation */}
       <nav className="space-y-2">

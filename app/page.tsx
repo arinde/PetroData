@@ -1,6 +1,11 @@
-// app/page.tsx
 import { redirect } from "next/navigation"
 
 export default function Home() {
-  redirect("/analysis")
+  if (typeof window === "undefined") {
+    redirect("/analysis")
+  }
+
+  return (
+    <meta httpEquiv="refresh" content="0; URL=/analysis" />
+  )
 }
