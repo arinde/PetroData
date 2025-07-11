@@ -11,9 +11,9 @@ import { useMemo } from "react"
 
 type Product = "PMS" | "AGO" | "DPK" | "LPG"
 
-type ChartDataItem = {
-  Region: string
+interface PetroData {
   State: string
+  Region: string
   Period: string
   PMS: number
   AGO: number
@@ -29,25 +29,25 @@ export default function LineChart({
   range,
 }: {
   product: Product
-  data: ChartDataItem[]
+  data: PetroData[]
   region: string
   state: string
   range: string
 }) {
   const filtered = useMemo(() => {
-    const rows = data.filter(
+    const filteredRows = data.filter(
       (d) =>
         (region === "All" || d.Region === region) &&
         (state === "All" || d.State === state)
     )
 
-    const grouped = rows.reduce((acc: Record<string, number[]>, item) => {
+    const grouped = filteredRows.reduce((acc: Record<string, number[]>, item) => {
       if (!acc[item.Period]) acc[item.Period] = []
       acc[item.Period].push(item[product])
       return acc
     }, {})
 
-    const chart = Object.entries(grouped)
+    let chartData = Object.entries(grouped)
       .map(([date, values]) => ({
         date,
         value: Number(
@@ -56,17 +56,16 @@ export default function LineChart({
       }))
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
-    // Simulated range filtering
-    const sliceMap: Record<string, number> = {
+    const limitMap: Record<string, number> = {
       "1D": 1,
       "1W": 7,
       "1M": 30,
       "3M": 90,
       "6M": 180,
-      ALL: chart.length,
+      "ALL": chartData.length,
     }
 
-    return chart.slice(-sliceMap[range])
+    return chartData.slice(-limitMap[range])
   }, [data, product, region, state, range])
 
   return (
