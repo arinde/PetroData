@@ -11,6 +11,16 @@ import { useMemo } from "react"
 
 type Product = "PMS" | "AGO" | "DPK" | "LPG"
 
+type ChartDataItem = {
+  Region: string
+  State: string
+  Period: string
+  PMS: number
+  AGO: number
+  DPK: number
+  LPG: number
+}
+
 export default function LineChart({
   product,
   data,
@@ -19,7 +29,7 @@ export default function LineChart({
   range,
 }: {
   product: Product
-  data: any[]
+  data: ChartDataItem[]
   region: string
   state: string
   range: string

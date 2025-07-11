@@ -10,8 +10,19 @@ type Range = typeof ranges[number]
 const products = ["AGO", "PMS", "DPK", "LPG"] as const
 const ranges = ["1D", "1W", "1M", "3M", "6M", "ALL"] as const
 
+// ✅ Typed data model for JSON
+interface PetroData {
+  State: string
+  Region: string
+  Period: string
+  PMS: number
+  AGO: number
+  DPK: number
+  LPG: number
+}
+
 export default function RetailPriceChartCard() {
-  const [data, setData] = useState<any[]>([])
+  const [data, setData] = useState<PetroData[]>([])
   const [selectedProduct, setSelectedProduct] = useState<Product>("PMS")
   const [selectedRange, setSelectedRange] = useState<Range>("1W")
   const [region, setRegion] = useState("All")
@@ -24,13 +35,20 @@ export default function RetailPriceChartCard() {
   }, [])
 
   const regions = ["All", ...Array.from(new Set(data.map((d) => d.Region)))]
-  const states = ["All", ...Array.from(
-    new Set(data.filter((d) => region === "All" || d.Region === region).map((d) => d.State))
-  )]
+  const states = [
+    "All",
+    ...Array.from(
+      new Set(
+        data
+          .filter((d) => region === "All" || d.Region === region)
+          .map((d) => d.State)
+      )
+    ),
+  ]
 
   return (
     <div className="bg-white dark:bg-[#1E293B] p-6 rounded-xl shadow-sm w-full">
-      {/* Title & Tabs */}
+      {/* Title & Product Tabs */}
       <div className="flex justify-between items-center mb-6 flex-wrap gap-3">
         <div className="flex items-center gap-3">
           <h2 className="text-lg font-bold text-gray-800 dark:text-white">
@@ -58,7 +76,7 @@ export default function RetailPriceChartCard() {
         </div>
       </div>
 
-      {/* Chart */}
+      {/* Line Chart */}
       <LineChart
         product={selectedProduct}
         data={data}
@@ -67,7 +85,7 @@ export default function RetailPriceChartCard() {
         range={selectedRange}
       />
 
-      {/* Time Range Tabs */}
+      {/* Date Range Tabs */}
       <div className="flex gap-3 my-4">
         {ranges.map((range) => (
           <button
@@ -84,7 +102,7 @@ export default function RetailPriceChartCard() {
         ))}
       </div>
 
-      {/* Filters */}
+      {/* Region & State Filters */}
       <div className="flex gap-4 flex-wrap mt-4">
         <select
           value={region}
