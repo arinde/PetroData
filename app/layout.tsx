@@ -22,7 +22,7 @@ export default function RootLayout({
           <div className="flex min-h-screen bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white">
             {/* Sidebar */}
             <Sidebar />
-            <main className="p-1 md:ml-[230px] ml-[50px]">{children}</main>
+            <main className="p-1 md:ml-[230px] ml-[110px]">{children}</main>
           </div>
         </ThemeProvider>
       </body>

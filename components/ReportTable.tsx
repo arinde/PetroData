@@ -89,30 +89,53 @@ export default function ReportTable() {
         </div>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full text-sm text-left">
-          <thead className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">
+      {/* Stacked card layout for mobile */}
+      <div className="grid gap-4 sm:hidden">
+        {filtered.map((item, idx) => (
+          <div
+            key={idx}
+            className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100"
+          >
+            <p className="font-semibold">{item.State} - {item.Region}</p>
+            <div className="mt-2 grid grid-cols-2 gap-y-1 text-sm">
+              <span className="font-medium">PMS:</span>
+              <span>₦{item.PMS}</span>
+              <span className="font-medium">AGO:</span>
+              <span>₦{item.AGO}</span>
+              <span className="font-medium">DPK:</span>
+              <span>₦{item.DPK}</span>
+              <span className="font-medium">LPG:</span>
+              <span>₦{item.LPG}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Table layout for tablet and desktop */}
+      <div className="hidden sm:block overflow-x-auto">
+        <table className="w-full text-sm md:text-sm text-left border-collapse">
+          <thead className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 whitespace-nowrap">
             <tr>
-              <th className="px-4 py-2">State</th>
-              <th className="px-4 py-2">Region</th>
-              <th className="px-4 py-2">PMS</th>
-              <th className="px-4 py-2">AGO</th>
-              <th className="px-4 py-2">DPK</th>
-              <th className="px-4 py-2">LPG</th>
+              <th className="px-3 py-2">State</th>
+              <th className="px-3 py-2">Region</th>
+              <th className="px-3 py-2">PMS</th>
+              <th className="px-3 py-2">AGO</th>
+              <th className="px-3 py-2">DPK</th>
+              <th className="px-3 py-2">LPG</th>
             </tr>
           </thead>
           <tbody>
             {filtered.map((item, idx) => (
               <tr
                 key={idx}
-                className="border-b border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-100"
+                className="border-b border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-100 whitespace-nowrap"
               >
-                <td className="px-4 py-2">{item.State}</td>
-                <td className="px-4 py-2">{item.Region}</td>
-                <td className="px-4 py-2">₦{item.PMS}</td>
-                <td className="px-4 py-2">₦{item.AGO}</td>
-                <td className="px-4 py-2">₦{item.DPK}</td>
-                <td className="px-4 py-2">₦{item.LPG}</td>
+                <td className="px-3 py-2">{item.State}</td>
+                <td className="px-3 py-2">{item.Region}</td>
+                <td className="px-3 py-2">₦{item.PMS}</td>
+                <td className="px-3 py-2">₦{item.AGO}</td>
+                <td className="px-3 py-2">₦{item.DPK}</td>
+                <td className="px-3 py-2">₦{item.LPG}</td>
               </tr>
             ))}
           </tbody>

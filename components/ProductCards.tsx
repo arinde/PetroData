@@ -44,8 +44,8 @@ export default function ProductCardBlock() {
     ).toFixed(2)
 
   return (
-    <div className="bg-white dark:bg-[#1E293B] rounded-xl p-6 shadow-sm w-full lg:w-1/2">
-      <h3 className="text-md font-bold mb-16 text-gray-800 dark:text-white">
+    <div className="bg-white dark:bg-[rgb(30,41,59)] rounded-xl md:p-6 py-4 px-3 shadow-sm w-full lg:w-1/2">
+      <h3 className="text-md font-bold md:mb-12 mb-8 mt-4 text-gray-800 dark:text-white">
         Current Product Retail Prices
       </h3>
 
@@ -56,25 +56,25 @@ export default function ProductCardBlock() {
           return (
             <div
               key={key}
-              className="flex justify-between  items-center border-b pb-3 last:border-none"
+              className="flex md:justify-between justify-evenly space-x-2  items-center border-b pb-3 last:border-none"
             >
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2 md:space-x-3">
                 <p className="text-sm font-semibold">{key}</p>
                 <p className="text-xs text-gray-500 dark:text-gray-400">
                   {product.name}
                 </p>
               </div>
 
-              <div className=" flex items-center space-x-3">
+              <div className=" flex items-center md:space-x-3 space-x-1 ">
                 <p className="font-medium text-sm text-center text-gray-800 dark:text-white">
                   ₦{average(key)}
                 </p>
                 <div className="flex justify-between items-center space-x-2">
-                  <p className={`text-sm ${product.color2}`}>
+                  <p className={`md:text-sm text-xs ${product.color2}`}>
                     {product.fakeValue > 0.37 ? "-" : "+"}
                     {product.fakeValue}
                   </p>
-                  <p className={`text-xs ${product.color} border-0 px-1 py-0.5 rounded-3xl`}>
+                  <p className={`text-xs ${product.color} border-0 md:px-1 px-0.5 py-0.5 rounded-3xl`}>
                     {product.fakeValue > 0.37 ? "-" : "+"}
                     {product.fakeChange}%
 

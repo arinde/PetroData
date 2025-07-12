@@ -61,7 +61,7 @@ export default function RetailPriceChartCard() {
   ]
 
   return (
-    <div className="bg-white dark:bg-[#1E293B] p-6 rounded-xl shadow-sm w-1/2">
+    <div className="bg-white dark:bg-[#1E293B] p-6 rounded-xl shadow-sm md:w-1/2 w-full">
       {/* Title & Tabs */}
       <div className="flex justify-between items-center mb-6 flex-wrap gap-3">
         <div className="flex items-center gap-3">
@@ -105,7 +105,7 @@ export default function RetailPriceChartCard() {
       </div>
 
       {/* Time Range Tabs */}
-      <div className="flex items-center justify-evenly gap-x-1">
+      <div className="flex flex-wrap gap-y-2 items-center justify-evenly gap-x-1">
         {ranges.map((range) => (
           <button
             key={range}

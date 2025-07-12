@@ -63,12 +63,12 @@ export default function AnalysisHeader({
       </div>
 
       {/* Sub-nav */}
-      <nav className="flex mt-10">
+      <nav className="flex flex-wrap space-x-2 mt-10">
         {subNav.map((item) => (
           <button
             key={item.key}
             onClick={() => setActiveTab(item.key)}
-            className={`mr-6 pt-2 text-xs font-normal border-0 flex items-center gap-x-1 transition ${
+            className={`md:mr-6 pt-2 text-xs font-normal border-0 flex items-center gap-x-1 transition ${
               activeTab === item.key
                 ? "border-t-2 border-t-teal-500 text-teal-400"
                 : "text-gray-200 hover:text-teal-600"
