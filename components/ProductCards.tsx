@@ -45,7 +45,7 @@ export default function ProductCardBlock() {
 
   return (
     <div className="bg-white dark:bg-[#1E293B] rounded-xl p-6 shadow-sm w-full lg:w-1/2">
-      <h3 className="text-md font-bold mb-4 text-gray-800 dark:text-white">
+      <h3 className="text-md font-bold mb-16 text-gray-800 dark:text-white">
         Current Product Retail Prices
       </h3>
 

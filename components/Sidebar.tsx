@@ -3,23 +3,24 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import Image from "next/image"
+import { LayoutDashboard, ChartColumn, BookOpen, Sparkle, BookmarkMinus, Settings } from "lucide-react"
 
 const navItems = [
-  { name: "Dashboard", path: "/dashboard" },
-  { name: "Analysis", path: "/analysis" },
-  { name: "News & Report", path: "/news" },
-  { name: "Exclusive Tab", path: "/exclusive" },
-  { name: "Watchlist", path: "/watchlist" },
-  { name: "Settings", path: "/settings" },
+  { name: "Dashboard", path: "/dashboard", icon: <LayoutDashboard width={20} height={20} /> },
+  { name: "Analysis", path: "/analysis", icon: <ChartColumn width={20} height={20}/> },
+  { name: "News & Report", path: "/news", icon: <BookOpen width={20} height={20}/> },
+  { name: "Exclusive Tab", path: "/exclusive", icon: <Sparkle width={20} height={20} /> },
+  { name: "Watchlist", path: "/watchlist", icon: <BookmarkMinus width={20} height={20} /> },
+  { name: "Settings", path: "/settings", icon: <Settings width={20} height={20} /> },
 ]
 
 export default function Sidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="hidden lg:block w-[250px] h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-6 border-r border-gray-200 dark:border-gray-700">
+    <aside className="fixed top-0 left-0 z-50 space-y-32 w-[50px] lg:block md:w-[230px] h-screen bg-white dark:bg-gray-800 text-gray-800 dark:text-white md:p-3 p-2 border-r border-gray-200 dark:border-gray-700">
       {/* Logo */}
-      <h1 className="text-2xl font-bold mb-10 tracking-wide flex items-center"><Image src="/images/Logo.png" alt="PetroData" width={32} height={32} /><span className="text-teal-500">Petro</span>Data</h1>
+      <h1 className="text-2xl font-bold mt-6 tracking-wide flex items-center"><Image src="/images/Logo.png" alt="PetroData" width={32} height={32} /><span className="text-teal-500">Petro</span>Data</h1>
 
       {/* Navigation */}
       <nav className="space-y-2">
@@ -30,13 +31,13 @@ export default function Sidebar() {
             <Link
               key={item.path}
               href={item.path}
-              className={`block px-4 py-2 rounded-md text-sm font-medium transition ${
+              className={` px-4 py-2 rounded-md text-sm font-medium flex items-center gap-x-3 transition ${
                 isActive
-                  ? "bg-blue-600 text-white"
+                  ?  "text-teal-500"
                   : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
               }`}
             >
-              {item.name}
+              {item.icon}<span className="hidden md:flex">{item.name}</span>
             </Link>
           )
         })}

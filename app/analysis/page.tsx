@@ -20,9 +20,9 @@ export default function AnalysisPage() {
         <div className="space-y-6">
           <div className="flex flex-col lg:flex-row gap-6">
             <ProductCards />
-            <div className="w-full lg:w-1/2">
+            
              <RetailPriceChartCard />
-            </div>
+            
           </div>
 
           <ReportTable />

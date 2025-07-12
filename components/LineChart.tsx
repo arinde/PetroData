@@ -37,8 +37,8 @@ export default function LineChart({
   const filtered = useMemo(() => {
     const filteredRows = data.filter(
       (d) =>
-        (region === "All" || d.Region === region) &&
-        (state === "All" || d.State === state)
+        (region === "Region" || d.Region === region) &&
+        (state === "State" || d.State === state)
     )
 
     const grouped = filteredRows.reduce((acc: Record<string, number[]>, item) => {
@@ -69,7 +69,7 @@ export default function LineChart({
   }, [data, product, region, state, range])
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={200}>
       <ReLineChart data={filtered}>
         <XAxis dataKey="date" axisLine stroke="#ccc" tickLine={false} />
         <Tooltip
@@ -79,7 +79,7 @@ export default function LineChart({
         <Line
           type="monotone"
           dataKey="value"
-          stroke="#2563eb"
+          stroke="#38b2ac"
           strokeWidth={3}
           dot={false}
         />
